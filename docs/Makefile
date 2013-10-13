@@ -39,6 +39,11 @@ endif
 	@sed -i.bak 's/#language = None/language = "$(LANG)"/' tmp/$(LANG)/conf.py
 	@rm -f tmp/$(LANG)/conf.py.bak
 
+# Process latex to strip non-ascii characters and perform other necessary
+# changes
+post-latex: latex
+	./post-latex.sh $(BUILDDIR)/latex/n98-magerun-doc.tex
+
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"

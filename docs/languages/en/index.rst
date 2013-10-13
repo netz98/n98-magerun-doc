@@ -9,38 +9,15 @@ Welcome to n98-magerun documentation!
 Contents:
 
 .. toctree::
-    :hidden:
+    :glob:
 
     ref/overview
     ref/installation
-    commands/global
-    commands/Admin.User.CreateUserCommand
-    commands/Admin.User.ChangePasswordCommand
+    ref/genera_usage
+    commands/*
     ref/copyrights
-
-|IntroductionToMagerun|
------------------------
-
-    * :doc:`ref/overview`
-    * :doc:`ref/installation`
-
-|CommandsReference|
--------------------
-
-* :doc:`commands/global`
-
-|AdminCommands|
-^^^^^^^^^^^^^^^
-
-    * :doc:`commands/Admin.User.ChangePasswordCommand`
-
-Copyright
----------
-
-    * :doc:`ref/copyrights`
 
 |IndicesAndTables|
 ==================
 
 * :doc:`index`
-* :ref:`search`
