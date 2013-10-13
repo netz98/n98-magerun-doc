@@ -83,6 +83,8 @@ exclude_patterns = ['_build']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+rst_epilog = "\n.. include:: /%s/snippets.rst\n\n.. include:: /%s/translated-snippets.rst\n\n"%(os.path.abspath('.'),os.path.abspath('.'),)
+
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
@@ -110,7 +112,7 @@ html_theme = 'default'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = "../../magerun_logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -164,7 +166,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'n98-magerunDocumentationdoc'
+htmlhelp_basename = 'n98-magerun-doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -183,13 +185,13 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'n98-magerunDocumentation.tex', u'n98-magerun Documentation Documentation',
+  ('index', 'n98-magerun-doc.tex', u'n98-magerun Documentation',
    u'netz98 new media GmbH', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo = "../../magerun_logo.png"
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -213,7 +215,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'n98-magerundocumentation', u'n98-magerun Documentation Documentation',
+    ('index', 'n98-magerun-doc', u'n98-magerun Documentation',
      [u'netz98 new media GmbH'], 1)
 ]
 
@@ -227,8 +229,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'n98-magerunDocumentation', u'n98-magerun Documentation Documentation',
-   u'netz98 new media GmbH', 'n98-magerunDocumentation', 'One line description of project.',
+  ('index', 'n98-magerun-doc', u'n98-magerun Documentation',
+   u'netz98 new media GmbH', 'n98-magerun-doc', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -240,3 +242,8 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+# Hack to render the php source code without the <?php tag
+from sphinx.highlighting import lexers
+from pygments.lexers.web import PhpLexer
+lexers['php'] = PhpLexer(startinline=True)
