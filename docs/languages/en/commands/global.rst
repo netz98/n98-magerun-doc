@@ -1,67 +1,75 @@
-admin:user:create
-=================
+Global
+======
 
-Create a new admin user.
+help
+----
 
--  Usage:
+-  Description: Displays help for a command
+-  Usage: ``help [--xml] [--format="..."] [--raw] [command_name]``
+-  Aliases:
 
-.. code-block:: sh
+The help command displays help for a given command:
 
-   $ n98-magerun.phar admin:user:create [username] [email] [password] [firstname] [lastname] [role]
+php n98-magerun.phar help list
 
-Arguments
-~~~~~~~~~
+You can also output the help in other formats by using the --format
+option:
 
-**username:**
+php n98-magerun.phar help --format=xml list
 
--  Name: username
--  Is required: no
+To display the list of available commands, please use the list command.
+
+Arguments:
+~~~~~~~~~~
+
+**command:**
+
+-  Name: command
+-  Is required: yes
 -  Is array: no
--  Description: Username
+-  Description: The command to execute
 -  Default: ``NULL``
 
-**email:**
+**command\_name:**
 
--  Name: email
+-  Name: command\_name
 -  Is required: no
 -  Is array: no
--  Description: Email, empty string = generate
+-  Description: The command name
+-  Default: ``'help'``
+
+Options:
+~~~~~~~~
+
+**xml:**
+
+-  Name: ``--xml``
+-  Shortcut:
+-  Accept value: no
+-  Is value required: no
+-  Is multiple: no
+-  Description: To output help as XML
+-  Default: ``false``
+
+**format:**
+
+-  Name: ``--format``
+-  Shortcut:
+-  Accept value: yes
+-  Is value required: yes
+-  Is multiple: no
+-  Description: To output help in other formats
 -  Default: ``NULL``
 
-**password:**
+**raw:**
 
--  Name: password
--  Is required: no
--  Is array: no
--  Description: Password
--  Default: ``NULL``
-
-**firstname:**
-
--  Name: firstname
--  Is required: no
--  Is array: no
--  Description: Firstname
--  Default: ``NULL``
-
-**lastname:**
-
--  Name: lastname
--  Is required: no
--  Is array: no
--  Description: Lastname
--  Default: ``NULL``
-
-**role:**
-
--  Name: role
--  Is required: no
--  Is array: no
--  Description: Role
--  Default: ``NULL``
-
-Options
-~~~~~~~
+-  Name: ``--raw``
+-  Shortcut:
+-  Accept value: no
+-  Is value required: no
+-  Is multiple: no
+-  Description: To output raw command help
+-  Default: ``false``
 
 **help:**
 

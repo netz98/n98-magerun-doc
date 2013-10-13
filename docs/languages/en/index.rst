@@ -13,6 +13,8 @@ Contents:
 
     ref/overview
     ref/installation
+    commands/global
+    commands/Admin.User.CreateUserCommand
     commands/Admin.User.ChangePasswordCommand
     ref/copyrights
 
@@ -23,7 +25,9 @@ Contents:
     * :doc:`ref/installation`
 
 |CommandsReference|
-----------
+-------------------
+
+* :doc:`commands/global`
 
 |AdminCommands|
 ^^^^^^^^^^^^^^^
