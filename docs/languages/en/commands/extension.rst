@@ -7,7 +7,8 @@ extension:download
 
 Download magento-connect package
 
-
+* Requires Magento&amp;#039;s `mage` shell script.
+* Does not work with Windows as operating system.
 
 Usage:
 
@@ -204,7 +205,11 @@ extension:install
 
 Install magento-connect package
 
+If the package could not be found a search for alternatives will be done.
+If alternatives could be found you can select the package to install.
 
+* Requires Magento&amp;#039;s `mage` shell script.
+* Does not work with Windows as operating system.
 
 Usage:
 
@@ -401,7 +406,8 @@ extension:list
 
 List magento connection extensions
 
-
+* Requires Magento&amp;#039;s `mage` shell script.
+* Does not work with Windows as operating system.
 
 Usage:
 
@@ -598,7 +604,8 @@ extension:upgrade
 
 Upgrade magento-connect package
 
-
+* Requires Magento&amp;#039;s `mage` shell script.
+* Does not work with Windows as operating system.
 
 Usage:
 

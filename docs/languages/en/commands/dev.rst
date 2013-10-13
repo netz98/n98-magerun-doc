@@ -2584,7 +2584,10 @@ dev:module:rewrite:conflicts
 
 Lists all magento rewrite conflicts
 
+Lists all duplicated rewrites and tells you which class is loaded by Magento.
+The command checks class inheritance in order of your module dependencies.
 
+* If a filename with `--log-junit` option is set the tool generates an XML file and no output to *stdout*.
 
 Usage:
 
@@ -4338,9 +4341,9 @@ dev:theme:duplicates
 ********************
 
 
-Find duplicate files in your theme
+Find duplicate files (templates, layout, locale, etc.) between two themes.
 
-
+* If a filename with `--log-junit` option is set the tool generates an XML file and no output to *stdout*.
 
 Usage:
 

@@ -7,7 +7,10 @@ sys:check
 
 Checks Magento System
 
-
+- Checks missing files and folders
+- Security
+- PHP Extensions (Required and Bytecode Cache)
+- MySQL InnoDB Engine
 
 Usage:
 
@@ -184,7 +187,7 @@ sys:cron:history
 ****************
 
 
-Lists last executed jobs
+Last executed cronjobs with status.
 
 
 
@@ -544,7 +547,8 @@ sys:cron:run
 
 Runs a cronjob by job code
 
-
+If no `job` argument is passed you can select a job from a list.
+See it in action: http://www.youtube.com/watch?v=QkzkLgrfNaM
 
 Usage:
 
@@ -1139,7 +1143,7 @@ sys:setup:compare-versions
 
 Compare module version with core_resource table.
 
-
+Compares module version with saved setup version in `core_resource` table and displays version mismatch.
 
 Usage:
 
@@ -1338,7 +1342,8 @@ sys:setup:run
 
 Runs all new setup scripts.
 
-
+Runs all setup scripts (no need to call frontend).
+This command is useful if you update your system with enabled maintenance mode.
 
 Usage:
 
@@ -1875,7 +1880,17 @@ sys:url:list
 
 Get all urls.
 
+Examples:
 
+- Create a list of product urls only:
+
+   $ n98-magerun.phar sys:url:list --add-products 4
+
+- Create a list of all products, categories and cms pages of store 4 and 5 separating host and path (e.g. to feed a jmeter csv sampler):
+
+   $ n98-magerun.phar sys:url:list --add-all 4,5 &amp;#039;{host},{path}&amp;#039; &amp;gt; urls.csv
+
+- The &amp;quot;linetemplate&amp;quot; can contain all parts &amp;quot;parse_url&amp;quot; return wrapped in &amp;#039;{}&amp;#039;. &amp;#039;{url}&amp;#039; always maps the complete url and is set by default
 
 Usage:
 
