@@ -1,6 +1,5 @@
-
-admin
-#####
+Admin Commands
+##############
 
 admin:notifications
 *******************

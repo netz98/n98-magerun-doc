@@ -10,6 +10,7 @@ Contents:
 
 .. toctree::
     :glob:
+    :hidden:
 
     ref/overview
     ref/installation
@@ -17,7 +18,25 @@ Contents:
     commands/*
     ref/copyrights
 
+|CommandsReference|
+-------------------
+
+    * :doc:`Standalone Commands<commands/_standalone>`
+    * :doc:`commands/admin`
+    * :doc:`commands/cache`
+    * :doc:`commands/composer`
+    * :doc:`commands/config`
+    * :doc:`commands/customer`
+    * :doc:`commands/db`
+    * :doc:`commands/design`
+    * :doc:`commands/dev`
+    * :doc:`commands/extension`
+    * :doc:`commands/index`
+    * :doc:`commands/local-config`
+    * :doc:`commands/script`
+    * :doc:`commands/sys`
+
 |IndicesAndTables|
-==================
+------------------
 
 * :doc:`index`

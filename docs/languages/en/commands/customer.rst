@@ -1,6 +1,5 @@
-
-customer
-########
+Customer Commands
+#################
 
 customer:change-password
 ************************

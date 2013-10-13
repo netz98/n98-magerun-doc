@@ -1,6 +1,5 @@
-
-local-config
-############
+Local-config Commands
+#####################
 
 local-config:generate
 *********************

@@ -1,6 +1,5 @@
-
-config
-######
+Config Commands
+###############
 
 config:delete
 *************

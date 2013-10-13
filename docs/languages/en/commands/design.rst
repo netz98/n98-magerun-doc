@@ -1,6 +1,5 @@
-
-design
-######
+Design Commands
+###############
 
 design:demo-notice
 ******************

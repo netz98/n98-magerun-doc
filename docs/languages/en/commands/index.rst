@@ -1,6 +1,5 @@
-
-index
-#####
+Index Commands
+##############
 
 index:list
 **********

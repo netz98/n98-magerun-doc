@@ -1,6 +1,5 @@
-
-composer
-########
+Composer Commands
+#################
 
 composer:diagnose
 *****************
