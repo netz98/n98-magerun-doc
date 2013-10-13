@@ -7,7 +7,7 @@ customer:change-password
 
 Changes the password of a customer.
 
-
+- Website parameter must only be given if more than one websites are available.
 
 Usage:
 
@@ -230,7 +230,7 @@ customer:create
 ***************
 
 
-Creates a customer.
+Creates a new customer/user for shop frontend.
 
 
 
@@ -483,7 +483,7 @@ customer:create:dummy
 *********************
 
 
-Creates a dummy customers.
+Generate dummy customers. You can specify a count and a locale.
 
 Supported Locales:
 
@@ -724,7 +724,7 @@ customer:info
 *************
 
 
-Show infos about a customer
+Loads basic customer info by email address.
 
 
 
@@ -937,7 +937,8 @@ customer:list
 
 Lists customers
 
-
+List customers. The output is limited to 1000 (can be changed by overriding config).
+If search parameter is given the customers are filtered (searchs in firstname, lastname and email).
 
 Usage:
 

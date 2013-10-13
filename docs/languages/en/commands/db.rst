@@ -186,7 +186,9 @@ db:create
 
 Create currently configured database
 
-
+The command tries to create the configured database according to your
+settings in app/etc/local.xml.
+The configured user must have &amp;quot;CREATE DATABASE&amp;quot; privileges on MySQL Server.
 
 Usage:
 
@@ -365,7 +367,9 @@ db:drop
 
 Drop current database
 
-
+The command prompts before dropping the database. If --force option is specified it
+directly drops the database.
+The configured user in app/etc/local.xml must have &amp;quot;DROP&amp;quot; privileges.
 
 Usage:
 
@@ -564,6 +568,43 @@ db:dump
 
 Dumps database with mysqldump cli client according to informations from local.xml
 
+Dumps configured magento database with `mysqldump`.
+You must have installed the MySQL client tools.
+
+On debian systems run `apt-get install mysql-client` to do that.
+
+The command reads app/etc/local.xml to find the correct settings.
+If you like to skip data of some tables you can use the --strip option.
+The strip option creates only the structure of the defined tables and
+forces `mysqldump` to skip the data.
+
+Dumps your database and excludes some tables. This is useful i.e. for development.
+
+Separate each table to strip by a space.
+You can use wildcards like * and ? in the table names to strip multiple tables.
+In addition you can specify pre-defined table groups, that start with an @
+Example: &amp;quot;dataflow_batch_export unimportant_module_* @log
+
+   $ n98-magerun.phar db:dump --strip=&amp;quot;@stripped&amp;quot;
+
+Available Table Groups:
+
+* @log Log tables
+* @dataflowtemp Temporary tables of the dataflow import/export tool
+* @stripped Standard definition for a stripped dump (logs and dataflow)
+* @sales Sales data (orders, invoices, creditmemos etc)
+* @customers Customer data
+* @trade Current trade data (customers and orders). You usally do not want those in developer systems.
+* @development Removes logs and trade data so developers do not have to work with real customer data
+
+Extended: https://github.com/netz98/n98-magerun/wiki/Stripped-Database-Dumps
+
+See it in action: http://youtu.be/ttjZHY6vThs
+
+- If you like to prepend a timestamp to the dump name the --add-time option can be used.
+
+- The command comes with a compression function. Add i.e. `--compress=gz` to dump directly in
+ gzip compressed file.
 
 
 &amp;lt;comment&amp;gt;Compression option&amp;lt;/comment&amp;gt;
@@ -1220,7 +1261,8 @@ db:info
 
 Dumps database informations
 
-
+This command is useful to print all informations about the current configured database in app/etc/local.xml.
+It can print connection string for JDBC, PDO connections.
 
 Usage:
 
@@ -1399,6 +1441,13 @@ db:query
 
 Executes an SQL query on the database defined in local.xml
 
+Executes an SQL query on the current configured database. Wrap your SQL in
+single or double quotes.
+
+If your query produces a result (e.g. a SELECT statement), the output of the
+mysql cli tool will be returned.
+
+* Requires MySQL CLI tools installed on your system.
 
 
 Usage:

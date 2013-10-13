@@ -186,7 +186,19 @@ index:reindex
 
 Reindex a magento index by code
 
+Index by indexer code. Code is optional. If you don&amp;#039;t specify a code you can pick a indexer from a list.
 
+   $ n98-magerun.phar index:reindex [code]
+
+
+Since 1.75.0 it&amp;#039;s possible to run mutiple indexers by seperating code with a comma.
+
+i.e.
+
+   $ n98-magerun.phar index:reindex catalog_product_attribute,tag_summary
+
+If no index is provided as argument you can select indexers from menu by &amp;quot;number&amp;quot; like &amp;quot;1,3&amp;quot; for first and third
+indexer.
 
 Usage:
 
@@ -383,7 +395,7 @@ index:reindex:all
 
 Reindex all magento indexes
 
-
+Loops all magento indexes and triggers reindex.
 
 Usage:
 

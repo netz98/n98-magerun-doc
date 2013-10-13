@@ -7,7 +7,11 @@ local-config:generate
 
 Generates local.xml config
 
+Generates the app/etc/local.xml.
 
+- The file &amp;quot;app/etc/local.xml.template&amp;quot; (bundles with Magento) must exist!
+- Currently the command does not validate anything you enter.
+- The command will not overwrite existing app/etc/local.xml files.
 
 Usage:
 
